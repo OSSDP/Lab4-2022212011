@@ -16,7 +16,6 @@ jobs:
           path: ~/.m2  
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}  
           restore-keys: ${{ runner.os }}-m2  
-      - name: Change to Maven project directory  
-        run: cd Lab2open  
       - name: Run tests with Maven  
-        run: mvn -B test
+        run: mvn -B test  
+        working-directory: Lab2open  # 指定 Maven 命令应该在 Lab2open 目录中执行
